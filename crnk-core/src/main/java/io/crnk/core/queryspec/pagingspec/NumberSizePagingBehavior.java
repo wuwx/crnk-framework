@@ -37,11 +37,11 @@ public class NumberSizePagingBehavior extends PagingBehaviorBase<NumberSizePagin
 
 		// don't show page number if paging is not used
 		if (pagingSpec.getSize() != null || pagingSpec.getNumber() != 1) {
-			values.put(String.format("page[%s]", NUMBER_PARAMETER),
+			values.put(String.format("page%5B%s%5D", NUMBER_PARAMETER),
 					new HashSet<>(Arrays.asList(Long.toString(pagingSpec.getNumber()))));
 		}
 		if (pagingSpec.getSize() != null) {
-			values.put(String.format("page[%s]", SIZE_PARAMETER),
+			values.put(String.format("page%5B%s%5D", SIZE_PARAMETER),
 					new HashSet<>(Arrays.asList(Long.toString(pagingSpec.getSize()))));
 		}
 
