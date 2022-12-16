@@ -28,11 +28,11 @@ public class OffsetLimitPagingBehavior extends PagingBehaviorBase<OffsetLimitPag
 	public Map<String, Set<String>> serialize(final OffsetLimitPagingSpec pagingSpec, final String resourceType) {
 		Map<String, Set<String>> values = new HashMap<>();
 		if (pagingSpec.getOffset() != 0) {
-			values.put(String.format("page[%s]", OFFSET_PARAMETER),
+			values.put(String.format("page%5B%s%5D", OFFSET_PARAMETER),
 					new HashSet<>(Arrays.asList(Long.toString(pagingSpec.getOffset()))));
 		}
 		if (pagingSpec.getLimit() != null) {
-			values.put(String.format("page[%s]", LIMIT_PARAMETER),
+			values.put(String.format("page%5B%s%5D", LIMIT_PARAMETER),
 					new HashSet<>(Arrays.asList(Long.toString(pagingSpec.getLimit()))));
 		}
 
